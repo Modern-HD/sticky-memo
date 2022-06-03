@@ -1,0 +1,2 @@
+# sticky-memo
+CRUD Practice
