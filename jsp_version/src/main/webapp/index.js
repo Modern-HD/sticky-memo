@@ -42,7 +42,7 @@ document.querySelectorAll('.modal-close-btn').forEach((el) => {
 });
 
 function update_sticky_memo(id) {
-	const memo = document.querySelector(`.memo[data-id="${id}"]`);
+    const memo = document.querySelector(`.memo[data-id="${id}"]`);
     memo.outerHTML = `<form action="./modify.sm" method="post">${memo.outerHTML}</form>`;
     const header = document.querySelector(`.memo[data-id="${id}"] > .memo-header`);
     const section = document.querySelector(`.memo[data-id="${id}"] > .memo-section`);
@@ -54,8 +54,8 @@ function update_sticky_memo(id) {
 }
 
 function create_sticky_memo(color) {
-	let link = `./insert.sm?color=${color}`;
-	location.replace(link);
+    let link = `./insert.sm?color=${color}`;
+    location.replace(link);
 }
 
 function delete_modal_open(id) {

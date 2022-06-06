@@ -49,13 +49,19 @@
     height: 30px;
 }
 
-.memo-header > i {
+.memo-header i {
     cursor: pointer;
     color: #6c757d;
 }
 
-.memo-header > i:hover {
+.memo-header i:hover {
     color: rgb(255, 250, 224);
+}
+
+.memo-header > button {
+	padding: 0;
+	width: 16px;
+	height: 16px;
 }
 
 .memo-section textarea {
@@ -69,8 +75,8 @@
 }
 
 .memo-header button {
-	border: none;
-	background-color: transparent;
+    border: none;
+    background-color: transparent;
 }
 
 .update-err {

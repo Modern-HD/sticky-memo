@@ -47,7 +47,7 @@
     </div>
     <section class="container-fluid my-5">
         <div id="memobox" class="d-flex justify-content-center flex-wrap">
-			<% for(MemoVO mvo : list) { %>
+            <% for(MemoVO mvo : list) { %>
 			<div class="memo memo-<%=mvo.getColor()%> m-3" data-id="<%=mvo.getId()%>">
                 <div class="memo-header px-2 py-1 text-end">
                     <i class="bi bi-pencil-square update-btn" data-id="<%=mvo.getId()%>"></i>
@@ -57,7 +57,7 @@
                 <%=mvo.getContent()%>
                 </div>
             </div>
-			<% } %>
+            <% } %>
         </div>
     </section>
 	<div id="delete_modal" class="my-modal col-4 bg-white d-none">
