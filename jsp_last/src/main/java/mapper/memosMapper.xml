@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemosMapper">
+    <insert id="my_reg_post" parameterType="mvo">
+        insert into memos(uno, types, color) values
+        (#{uno}, #{types}, #{color})
+    </insert>
+    <insert id="ch_reg_post" parameterType="mvo">
+        insert into memos(uno, cno, types, color) values
+        (#{uno}, #{cno}, #{types}, #{color})
+    </insert>
+    <insert id="my_reg_image" parameterType="mvo">
+        insert into memos(uno, types, color, content) values
+        (#{uno}, #{types}, #{color}, #{content})
+    </insert>
+    <insert id="ch_reg_image" parameterType="mvo">
+        insert into memos(uno, cno, types, color, content) values
+        (#{uno}, #{cno}, #{types}, #{color}, #{content})
+    </insert>
+    <select id="my_list" parameterType="int" resultType="mvo">
+        select * from memos where uno = #{uno} and cno is null
+    </select>
+    <select id="ch_list" parameterType="int" resultType="mvo">
+        select m.mno, m.uno, u.nick_name, 
+            m.cno, m.types, m.color, 
+            m.content, m.created, m.modified 
+        from memos m natural join users u
+        where m.cno = #{cno}
+    </select>
+    <select id="detail" parameterType="int" resultType="mvo">
+        select * from memos where mno = #{mno}
+    </select>
+    <select id="room_uno_detail" parameterType="int" resultType="idto">
+		select count(mno) as "memo_count", max(modified) as "last_used"
+		from memos
+		where uno = #{uno} and cno is null;
+    </select>
+    <select id="room_cno_detail" parameterType="int" resultType="idto">
+        select c.cno, count(m.mno) as "memo_count" ,count(distinct m.uno) as "head_count", max(m.modified) as "last_used", c.ch_name, c.created 
+        from memos m join channel c on m.cno = c.cno
+        where m.cno = #{cno}
+    </select>
+    <update id="mod" parameterType="mvo">
+        update memos set content = #{content}, modified = now() where mno = #{mno}
+    </update>
+    <delete id="del" parameterType="int">
+        delete from memos where mno = #{mno}
+    </delete>
+</mapper>

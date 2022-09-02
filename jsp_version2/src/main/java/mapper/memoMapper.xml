@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemoMapper">
+  <select id="login" parameterType="uvo" resultType="uvo">
+    select uid from users where uid = #{uid } and pwd = #{pwd }
+  </select>
+  <select id="list" parameterType="String" resultType="mvo">
+    select mno, uid, types, color, content
+    from memos where uid = #{uid } order by created desc
+  </select>
+  <insert id="make" parameterType="mvo">
+    insert into memos(uid, types, color, content, created, modified)
+    values(#{uid }, 'post', #{color }, '', now(), now())
+  </insert>
+  <insert id="register" parameterType="uvo">
+    insert into users values(#{uid }, #{pwd }, now())
+  </insert>
+  <update id="modify" parameterType="mvo">
+    update memos set content = #{content } where mno = #{mno }
+  </update>
+  <delete id="remove" parameterType="Integer">
+    delete from memos where mno = #{mno }
+  </delete>
+</mapper>

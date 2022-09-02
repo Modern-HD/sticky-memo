@@ -1,0 +1,269 @@
+@charset "UTF-8";
+#memo_nav_more {
+    box-shadow: 0px 3px 3px 0 rgba(102, 102, 102, 0.5);
+    border-radius: 0 0 10px 10px;
+    border-top: none;
+    width: 100px;
+    height: 30px;
+}
+
+#memo_nav_section {
+    border-radius: 0 0 20px 20px;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+.my-col {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+.memo-nav-items {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.nav-close {
+    height: 0;
+}
+
+.nav-more {
+    /* border: 2px solid; */
+    border-top: none;
+    height: 200px;
+}
+
+.memo-nav-items.memo-img > i {
+    font-size: 4em;
+    line-height: 100px;
+}
+
+.memo {
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 2px 4px 0 rgba(99, 99, 99, 0.5);
+}
+
+.memo-header {
+    width: 100%;
+    height: 30px;
+}
+
+.memo-header i {
+	margin-left: 2px;
+    cursor: pointer;
+    color: #6c757d;
+}
+
+.memo-header i:hover {
+    color: rgb(255, 250, 224);
+}
+
+.memo-header > button {
+    padding: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.memo-section {
+	height: 270px;
+}
+
+.memo-section textarea {
+    width: 100%;
+    height: 238px;
+    resize: none;
+    border: none;
+    border: 2px solid lightblue;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.6)
+}
+
+.memo-content {
+    width: 100%;
+    height: 270px;
+    transition: 0.3s;
+}
+
+.memo-info {
+    background-color: rgba(35, 35, 35, 0.75);
+    width: 100%;
+    height: 270px;
+    transition: 0.3s;
+}
+
+.memo-header button {
+    border: none;
+    background-color: transparent;
+}
+
+.update-err {
+    animation-duration: 0.3s;
+    animation-name: update-err;
+}
+
+.memo-yellow {
+    background-color: rgb(255, 255, 170);
+}
+
+.memo-yellow > .memo-header {
+    background-color: rgb(255, 239, 170);
+}
+
+.memo-pink {
+    background-color: rgb(255, 225, 229);
+}
+
+.memo-pink > .memo-header {
+    background-color: rgb(255, 205, 220);
+}
+
+.memo-blue {
+    background-color: rgb(218, 246, 255);
+}
+
+.memo-blue > .memo-header {
+    background-color: rgb(157, 227, 255);
+}
+
+.memo-green {
+    background-color: rgb(206, 255, 206);
+}
+
+.memo-green > .memo-header {
+    background-color: rgb(170, 245, 170);
+}
+
+.memo-img {
+    background-color: #f8f8f8;
+}
+
+.memo-img > .memo-header {
+    background-color: rgb(140, 225, 140);
+}
+
+.memo-section > div:first-child > img {
+    width: 270px;
+    height: 240px;
+    object-fit: cover;
+}
+
+#delete_modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    box-shadow: 0 0 0 9999px rgba(51, 51, 51, 0.3);
+    overflow: hidden;
+}
+
+.my-modal-header {
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.my-modal-section {
+    padding: 100px 0;
+}
+
+#file_form_modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    box-shadow: 0 0 0 9999px rgba(51, 51, 51, 0.3);
+    overflow: hidden;
+}
+
+#login_form, #sign_up_form {
+    height: 600px;
+    overflow: hidden;
+}
+
+#login_form input, #sign_up_form input {
+	font-size: 1em;
+	width: 200px;
+}
+
+#login_form > div:first-child {
+    height: 40px;
+}
+
+#sign_up_form > div:first-child {
+    height: 40px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+#ch_info {
+    color: white;
+    background-color: rgba(35, 35, 35, 0.8);
+    border-radius: 10px;
+    z-index: 50;
+    font-size: 1.15em;
+    transition: 0.3s;
+}
+
+#ch_search {
+    width: 310px;
+    color: white;
+    background-color: rgba(35, 35, 35, 0.8);
+    border-radius: 5px;
+    z-index: 45;
+    font-size: 1.15em;
+}
+
+#ch_search p {
+    margin: 10px 0;
+}
+
+#ch_search_name {
+    width: 190px;
+}
+
+#ch_title > h1 > i:hover {
+    color: rgb(255, 209, 140);
+}
+
+#menus {
+    height: 50px;
+}
+
+#mypage_login {
+    width: 300px;
+}
+
+#mod_windows .mod-forms {
+    height: 500px;
+}
+
+@keyframes update-err {
+    0%   {outline: 10px solid lightblue; outline-offset: 40px;}
+    99% {outline: 1px solid lightskyblue; outline-offset: 0px;}
+    100% {outline: none;}
+}
+
+@media (max-width: 768px) {
+	#ch_search {
+        width: 210px;
+	}
+}
+
+@media (min-width: 1200px) {
+    #mod_windows {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

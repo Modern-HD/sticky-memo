@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ChannelMapper">
+    <insert id="register" parameterType="String">
+        insert into channel(ch_name) values(#{ch_name})
+    </insert>
+    <select id="list" resultType="idto">
+        select c.ch_name, count(m.mno) as "memo_count"
+        from memos m join channel c on m.cno = c.cno
+        group by m.cno;
+    </select>
+    <select id="name_detail" parameterType="String" resultType="cvo">
+        select * from channel where ch_name = #{ch_name}
+    </select>
+    <select id="cno_detail" parameterType="int" resultType="idto">
+        select c.cno, count(m.mno) as "memo_count" ,count(distinct m.uno) as "head_count", max(m.modified) as "last_used", c.ch_name, c.created 
+        from memos m join channel c on m.cno = c.cno
+        where m.cno = #{cno}
+    </select>
+</mapper>
