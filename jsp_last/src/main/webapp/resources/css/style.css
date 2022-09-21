@@ -247,6 +247,14 @@
     height: 500px;
 }
 
+.overflow-scroll {
+	-ms-overflow-style: none;
+}
+
+.overflow-scroll::-webkit-scrollbar {
+	display: none;
+}
+
 @keyframes update-err {
     0%   {outline: 10px solid lightblue; outline-offset: 40px;}
     99% {outline: 1px solid lightskyblue; outline-offset: 0px;}
